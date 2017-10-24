@@ -13,6 +13,7 @@ app.use(fileUpload());
 
 app.get('/', (req, res) => {
     res.render('index', {title: 'Upload image'});
+    //res.status(200).send('111');
 });
 
 app.post('/post', (req, res) => {
