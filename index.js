@@ -10,10 +10,14 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug')
 app.use(fileUpload());
+app.use(express.static('./'));
 
 app.get('/', (req, res) => {
     res.render('index', {title: 'Upload image'});
-    //res.status(200).send('111');
+});
+
+app.get('/youtube', (req,res) => {
+    res.render('youtube',{videos:['E9lNI5vX_p8', 'jS4Z--kVtgo']});
 });
 
 app.post('/post', (req, res) => {
@@ -30,6 +34,12 @@ app.post('/post', (req, res) => {
         }
     });    
 });
+
+app.get('/uploaded', (req, res) => {
+    var fl = fs.readdirSync("./upload");
+    res.render('uploaded',{imgs: fl})
+    res.end();
+})
 
 if (module === require.main) {
     const server = app.listen(process.env.PORT || 80, () => {

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    for img in imgs
+        div(style='width:200px')
+            img(style='width:200px', src='/upload/' + img, alt=img)
+            span=img
+    
