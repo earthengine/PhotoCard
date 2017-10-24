@@ -1,0 +1,19 @@
+{
+  "name": "photocard",
+  "version": "1.0.0",
+  "description": "Manage ID card photos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Earth Engine",
+  "license": "GPL-2.0",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "dependencies": {
+    "express": "~4.15.2",
+    "express-fileupload": "~0.3.0"
+  }
+}
